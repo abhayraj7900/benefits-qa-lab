@@ -30,3 +30,55 @@ SQL examples are educational and are not executed by the portal. The app has no 
 | DELETE | `DELETE FROM Benefits WHERE benefit_id=999;` | No row matches | Remove benefit row 12. | `DELETE FROM Benefits WHERE benefit_id=12;` |
 
 INSERT, UPDATE, and DELETE examples modify a hypothetical practice database only. Always use a WHERE clause when changing or deleting targeted rows.
+
+## Intermediate SQL patterns (educational examples only)
+
+### HAVING
+
+```sql
+SELECT enrollment_status, COUNT(*) AS employee_count
+FROM Employees
+GROUP BY enrollment_status
+HAVING COUNT(*) > 1;
+```
+
+### Subquery
+
+```sql
+SELECT employee_name
+FROM Employees
+WHERE employee_id IN (
+  SELECT employee_id FROM Benefits WHERE coverage_status = 'Active'
+);
+```
+
+### Keys and data-quality checks
+
+`Employees.employee_id` can be the sample primary key. `Benefits.benefit_id` is its primary key, while `Benefits.employee_id` should reference `Employees.employee_id` as a foreign key. A real database must define/enforce the constraints.
+
+Find duplicate employee IDs:
+
+```sql
+SELECT employee_id, COUNT(*)
+FROM Employees
+GROUP BY employee_id
+HAVING COUNT(*) > 1;
+```
+
+Find orphan benefits with no matching employee:
+
+```sql
+SELECT b.*
+FROM Benefits b LEFT JOIN Employees e ON e.employee_id = b.employee_id
+WHERE e.employee_id IS NULL;
+```
+
+Find employees with no benefit row:
+
+```sql
+SELECT e.employee_id, e.employee_name
+FROM Employees e LEFT JOIN Benefits b ON b.employee_id = e.employee_id
+WHERE b.benefit_id IS NULL;
+```
+
+SUM/AVG need a numeric field. A hypothetical `BenefitPlans(benefit_id, annual_limit)` table can illustrate the idea, but it is not part of this sample schema. Reconciliation practice can compare employee IDs, plan types, status, and effective dates across fictional tables and investigate missing, duplicate, orphaned, or inconsistent rows. This app does not execute SQL or connect to a real database or DB2.

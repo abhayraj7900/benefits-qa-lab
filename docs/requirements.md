@@ -57,3 +57,16 @@ The app starts with `npm start`, serves its main page, permits the documented si
 ## Known limitations
 
 Authentication is a client-side demo check; the active account is fixed. Inactive/missing-benefit scenarios are represented in documented sample data and test steps rather than an employee selector. Local storage can be edited by the browser user. Seeded test steps are concise prompts rather than observed execution evidence. Automated checks are small Node checks and do not exercise the app through a browser.
+
+## Fictional portfolio practice requirements
+
+These additional IDs are practice material and are not Wipro or client requirements. Some model workflows not implemented in the current demo and are provided for scenario/test-design exercises.
+
+| ID | Practice requirement |
+|---|---|
+| FR-017 | Fictional employee eligibility rules can be checked against enrollment status. |
+| FR-018 | Enrollment start/end dates and deadlines are defined for boundary testing. |
+| FR-019 | Invalid, incomplete, duplicate, and missing employee records have explicit expected handling. |
+| FR-020 | Benefit plan selection and coverage status can be checked against enrollment data. |
+| FR-021 | Signed-out access to protected employee benefits is denied. |
+| FR-022 | High-volume enrollment behavior can be planned without claiming a load test was run. |

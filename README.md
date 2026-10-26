@@ -5,19 +5,19 @@ A beginner-friendly local demo for learning manual software testing. It combines
 ## Features
 
 - Responsive employee sign-in and fictional benefits dashboard.
-- 15 requirements-linked test scenarios and 40 seeded test definitions, initially **Not Run**.
+- 24 requirements-linked practice scenarios and 40 seeded test definitions, initially **Not Run**.
 - Requirements / RTM view with requirement-to-case links and covered/not covered status.
 - Search/filter and add, edit, view, and confirmed delete for test cases.
 - Manual Pass, Fail, Blocked, or Not Run execution records with timestamps, tester, notes, and preserved history.
-- Defect reporting, severity and priority, open/closed workflow.
+- Defect reporting linked to a test case, severity and priority, and Open / In Progress / Fixed / Retest / Closed workflow.
 - Optional screenshot attachment for a defect (image files up to 750 KB), saved with and previewed from its defect record.
-- Metrics derived from saved records and execution CSV export.
-- Fictional test data, 12 SQL learning examples, testing glossary, and 25 interview questions.
+- Metrics derived from saved records (latest outcome per case; reruns counted separately), requirement coverage, defect statuses, and execution CSV export.
+- Fictional test data, beginner/intermediate SQL learning, load/stress concepts, testing glossary, and interview practice.
 - Browser local storage persistence with a confirmed reset control.
 
 ## Technology and prerequisites
 
-The inspected workspace had no application code and no cached React dependencies. To keep setup reliable and avoid network installs, this implementation uses plain HTML, CSS, and JavaScript served by Node's built-in HTTP module. Node.js 18 or newer is required. There is no database, API, package installation step, or external service. Google Fonts are an optional stylesheet enhancement; system fonts are used as fallback.
+The project uses plain HTML, CSS, and JavaScript served by Node's built-in HTTP module. Node.js 18 or newer is required. There is no connected database (including DB2), API, or external service. SQL and stress-testing content is educational only; this project does not execute queries or load/stress runs. Google Fonts are an optional stylesheet enhancement; system fonts are used as fallback.
 
 ## Run locally
 
@@ -49,7 +49,7 @@ Cases, tester name, executions, defects, requirement-to-case links, and attached
 
 ## Documentation
 
-See [requirements](docs/requirements.md), [test plan](docs/test-plan.md), [scenarios](docs/test-scenarios.md), [test cases](docs/test-cases.md), [sample defects](docs/sample-defects.md), [execution guide](docs/test-execution-guide.md), [SQL practice](docs/sql-practice.md), [glossary](docs/testing-glossary.md), [interview questions](docs/interview-questions.md), and [summary template](docs/test-summary-template.md).
+See the [Wipro Manual QA portfolio guide](docs/wipro-manual-qa-guide.md) for role-focused project details. Requirements and examples are fictional, not Wipro/client specifications. See [requirements](docs/requirements.md), [test plan](docs/test-plan.md), [scenarios](docs/test-scenarios.md), [test cases](docs/test-cases.md), [sample defects](docs/sample-defects.md), [execution guide](docs/test-execution-guide.md), [SQL practice](docs/sql-practice.md), [glossary](docs/testing-glossary.md), [interview questions](docs/interview-questions.md), and [summary template](docs/test-summary-template.md).
 
 ## Limitations and future improvements
 
